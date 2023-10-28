@@ -8,7 +8,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(MinecraftServer.class)
-public class MinecraftServerMixin {
+public abstract class MinecraftServerMixin {
+
     @Inject(method = "loadWorld", at = @At("HEAD"))
     private void serverLoaded(CallbackInfo ci)
     {
@@ -20,6 +21,9 @@ public class MinecraftServerMixin {
     {
         UnderTensai.onServerClosed((MinecraftServer) (Object) this);
     }
-
-
+    @Inject(method = "tick", at = @At("HEAD"))
+    private void tickStart(CallbackInfo ci)
+    {
+        UnderTensai.tick();
+    }
 }
