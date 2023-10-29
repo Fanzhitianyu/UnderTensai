@@ -1,7 +1,7 @@
 package lazyalienserver.undertensai.particle;
 
 
-import lazyalienserver.undertensai.particle.ParticleTypes.UnderTensaiParticleTypes;
+import lazyalienserver.undertensai.particle.ParticleTypes.UnderTensaiParticleType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Vec3d;
 
@@ -26,7 +26,7 @@ public abstract class Particles {
         this.speed=speed;
     }
 
-    public abstract UnderTensaiParticleTypes getType();
+    public abstract UnderTensaiParticleType getType();
 
 
 }
