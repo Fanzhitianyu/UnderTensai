@@ -12,6 +12,6 @@ public class ParticleManager {
         }
     }
     public static void add(Particles particle){
-        particle.getChildType().particlesList.add(particle);
+        particle.getType().particlesList.add(particle);
     }
 }

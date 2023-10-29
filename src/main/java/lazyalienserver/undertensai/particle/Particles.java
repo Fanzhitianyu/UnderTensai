@@ -26,9 +26,7 @@ public abstract class Particles {
         this.speed=speed;
     }
 
-    public abstract UnderTensaiParticleTypes getChildType();
+    public abstract UnderTensaiParticleTypes getType();
 
-    public UnderTensaiParticleTypes gettype(){
-        return getChildType();
-    }
+
 }

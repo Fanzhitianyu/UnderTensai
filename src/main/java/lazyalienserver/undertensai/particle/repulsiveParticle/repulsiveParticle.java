@@ -11,7 +11,7 @@ public class repulsiveParticle extends Particles {
         super(player,POS,End,force,count,speed);
     }
     @Override
-    public UnderTensaiParticleTypes getChildType(){
+    public UnderTensaiParticleTypes getType(){
         return type;
     }
 }
