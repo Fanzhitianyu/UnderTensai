@@ -1,21 +1,22 @@
 package lazyalienserver.undertensai.particle;
 
 
-import lazyalienserver.undertensai.particle.ParticleTypes.ParticleTypes;
+import lazyalienserver.undertensai.particle.ParticleTypes.UnderTensaiParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Vec3d;
 
 public abstract class Particles {
-    public static ParticleTypes type;
-    protected ServerPlayerEntity player;
-    protected Vec3d POS;
-    protected Vec3d End;
+    public ServerPlayerEntity player;
 
-    protected boolean force;
+    public Vec3d POS;
 
-    protected int count;
+    public Vec3d End;
 
-    protected double speed;
+    public boolean force;
+
+    public int count;
+
+    public double speed;
     public Particles(ServerPlayerEntity player, Vec3d POS, Vec3d End, boolean force, int count, double speed){
         this.player=player;
         this.POS=POS;
@@ -25,7 +26,9 @@ public abstract class Particles {
         this.speed=speed;
     }
 
-    public ParticleTypes getType(){
-        return type;
+    public abstract UnderTensaiParticleTypes getChildType();
+
+    public UnderTensaiParticleTypes gettype(){
+        return getChildType();
     }
 }
